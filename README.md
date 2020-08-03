@@ -23,5 +23,8 @@ And clear the cache(`php flarum cache:clear` or clear from the admin panel)
 All media files that support DPlayer  
 所有支持DPlayer的媒体文件
 
+### Screenshot
+![](https://cdn.jsdelivr.net/gh/philipsc/UP@latest/2020/08/03/3e5b98bd726d6f65b5fd6254cd7adcdf.png)
+
 The current version only supports referencing external DPlayer players, I hope someone can integrate DPlayer in the root directory of the plugin.  
 当前版本只支持引用外部DPlayer播放器，希望有人能集成插件根目录的DPlayer.
