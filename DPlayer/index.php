@@ -27,12 +27,12 @@ $long=explode("/",$a);
 <div id="divbox" style="width:80%; margin:0 auto;  z-index:9999999999; line-height:30px; height:30px; font-size:14px; position:absolute; color:#FFFFFF; background: #090; top:8px; left:10%; text-align:center;border-radius: 8px;border-top-right-radius: 8px;border-top-left-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;opacity: 0.8;"> 影片内第三方广告，请勿轻信！ </div>
 <div id="DPlayer"></div>
 <div id="stats"></div>
-<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
-<script src="https://cdn.jsdelivr.net/npm/p2p-dplayer@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
 <script>
 var dp = new DPlayer({
     container: document.getElementById('DPlayer'),
-    autoplay:true,
+    autoplay:false,
     screenshot:true,
     hotkey:true,
     preload:'auto',
@@ -44,43 +44,11 @@ var dp = new DPlayer({
         pic: 'play.jpg',
         type: 'hls'
     },
-    //subtitle: {
-    //    url: 'dplayer.vtt',
-    //    type: 'webvtt',
-    //    fontSize: '25px',
-    //    bottom: '-10px',
-    //    color: '#FF2300'
-    //},
-    //danmaku: {
-    //    id: '<? echo $long[4];?>',
-    //    api: '/',   //这里填写弹幕地址
-    //    bottom: '25px'  //弹幕距离播放器底部的距离，防止遮挡字幕，取值形如: '10px' '10%'
-    //},
-        hlsjsConfig: {
-            // debug: false,
-            // Other hlsjsConfig options provided by hls.js
-            p2pConfig: {
-                logLevel: true,
-                live: false,        // set to true in live mode
-                // Other p2pConfig options provided by CDNBye
-                wsSignalerAddr:'wss://signal.cdnbye.com/wss',
-                // Other p2pConfig options provided by hlsjs-p2p-engine
-                    webRTCConfig: { 
-                        config: {         // custom webrtc configuration (used by RTCPeerConnection constructor)
-                            iceServers: [
-                              { urls: 'stun:stun.ideasip.com' }, 
-                              { urls: 'stun:stun1.l.google.com:19302' }, 
-                              { urls: 'stun:stun2.l.google.com:19302' }, 
-                              { urls: 'stun:stun3.l.google.com:19302' }, 
-                              { urls: 'stun:stun4.l.google.com:19302' }, 
-                              { urls: 'stun:stun.voipbuster.com' }, 
-                              { urls: 'stun:stun.voiparound.com' }, 
-                              { urls: 'stun:global.stun.twilio.com:3478?transport=udp' }
-                            ] 
-                        }
-                    }
-            }
-        }
+    danmaku: {
+        id: '<? echo $long[4];?>',
+        api: 'https://dplayer.alone88.cn',   //这里填写弹幕地址。 //Fill in the barrage address here.
+        bottom: '25px'  //弹幕距离播放器底部的距离，防止遮挡字幕，取值形如: '10px' '10%'。 //The distance between the screen and the bottom of the player to prevent the subtitle from being blocked. The value is as follows:'10px ''10%'.
+    }
 });
 dp.play();
 </script>
