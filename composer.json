@@ -2,9 +2,9 @@
   "name": "philipsc/flarum-ext-player",
   "description": "Add a video player plug-in that supports m3u8 format",
   "keywords": [
-    "flarum"
-    "player"
-    "m3u8"
+    "flarum",
+    "player",
+    "m3u8",
     "video"
   ],
   "type": "flarum-extension",
