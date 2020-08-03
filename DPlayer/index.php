@@ -46,7 +46,7 @@ var dp = new DPlayer({
     },
     danmaku: {
         id: '<? echo $long[4];?>',
-        api: 'https://dplayer.alone88.cn',   //这里填写弹幕地址。 //Fill in the barrage address here.
+        api: 'https://dplayer.alone88.cn/',   //这里填写弹幕地址。 //Fill in the barrage address here.
         bottom: '25px'  //弹幕距离播放器底部的距离，防止遮挡字幕，取值形如: '10px' '10%'。 //The distance between the screen and the bottom of the player to prevent the subtitle from being blocked. The value is as follows:'10px ''10%'.
     }
 });
