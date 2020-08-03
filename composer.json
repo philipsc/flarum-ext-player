@@ -1,0 +1,41 @@
+{
+  "name": "philipsc/flarum-ext-player",
+  "description": "Add a video player plug-in that supports m3u8 format",
+  "keywords": [
+    "flarum"
+    "player"
+    "m3u8"
+    "video"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "require": {
+    "flarum/core": "^0.1.0-beta.8"
+  },
+  "authors": [
+    {
+      "name": "philipsc",
+      "email": "chenjunzhang@live.com",
+      "homepage": "https://wedog.cc/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "philipsc\\weplayer\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "weplayer",
+      "icon": {
+        "name": "fas fa-tv",
+        "backgroundColor": "#3A649D",
+        "color": "#FFFFFF"
+      }
+    },
+    "flagrow": {
+      "discuss": ""
+      "github": "https://github.com/philipsc/flarum-ext-player"
+    }
+  }
+}
