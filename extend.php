@@ -26,5 +26,9 @@ return [
                '[audio src={URL?}][/audio]',
                '<audio class="weplayer" controls><source src="{URL}">Your browser does not support the audio element.</audio>'
             );
+            $config->BBCodes->addCustom(
+               '[video src={URL?}][/video]',
+               '<video class="weplayer" controls><source src="{URL}" type="video/mp4"></video>'
+            );
         })
 ];
