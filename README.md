@@ -3,7 +3,7 @@ Add a video player plug-in that supports m3u8 format
 
 ### v0.1↑
 Support adding music & videos playing link `[audio src=url]`&`[video src=url]`  
-支持添加音乐播放链接,用法`[audio src=url]`& `[video src=url]`
+支持添加音乐和视频播放链接,用法`[audio src=url]`& `[video src=url]`
 
 ### Installation
 composer:
