@@ -10,13 +10,6 @@
 #DPlayer .dplayer-logo {max-width: 100px;left: initial;right: 20px;top: 16px;}.dplayer-subtitle {top: 25px;}
 </style>
 <link type="text/css" href="./DPlayer.min.css" rel="stylesheet">
-<script language="javascript">
-function codefans(){
-var box=document.getElementById("divbox");
-box.style.display="none";
-}
-setTimeout("codefans()",40000);
-</script>
 </head>
 <?php
 $a=$_GET['url'];
@@ -24,7 +17,6 @@ $long=explode("/",$a);
 //echo "id=".$long[4];
 ?>
 <body>
-<div id="divbox" style="width:80%; margin:0 auto;  z-index:9999999999; line-height:30px; height:30px; font-size:14px; position:absolute; color:#FFFFFF; background: #090; top:8px; left:10%; text-align:center;border-radius: 8px;border-top-right-radius: 8px;border-top-left-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;opacity: 0.8;"> 影片内第三方广告，请勿轻信！ </div>
 <div id="DPlayer"></div>
 <div id="stats"></div>
 <script src="https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js"></script>
@@ -46,10 +38,16 @@ var dp = new DPlayer({
     },
     danmaku: {
         id: '<? echo $long[4];?>',
-        api: 'https://dplayer.alone88.cn/',   //这里填写弹幕地址。 //Fill in the barrage address here.
+        api: 'https://dplayer.alone88.cn/',   //这里填写弹幕地址。 //Fill in the barrage address here.https://dplayer.moerats.com/
         bottom: '25px'  //弹幕距离播放器底部的距离，防止遮挡字幕，取值形如: '10px' '10%'。 //The distance between the screen and the bottom of the player to prevent the subtitle from being blocked. The value is as follows:'10px ''10%'.
     }
 });
+dp.on('pause', function () {
+	dp.notice('友情提醒：影片内第三方广告，请勿轻信！', 15000, 1);
+    });
+dp.on('play', function () {
+    dp.notice('友情提醒：影片内第三方广告，请勿轻信！', 20000, 0.5);
+    });
 dp.play();
 </script>
 </body>
